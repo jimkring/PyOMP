@@ -30,7 +30,12 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       #run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-      run: ./build.sh 
+      run: |
+        ./llvm-project-build.sh
+        ./llvmlite-build.sh
+        ./numba-build.sh
+      
+      #./build.sh 
 
     #- name: Test
       #working-directory: ${{github.workspace}}/build
